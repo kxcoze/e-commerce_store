@@ -23,7 +23,7 @@ class Product(models.Model):
     name = models.CharField(max_length=100, null=False)
     description = models.TextField(blank=True)
     category = TreeForeignKey(
-        Category, related_name="product_category", on_delete=models.CASCADE
+        Category, related_name="product_category", on_delete=models.CASCADE, null=True
     )
     price = models.IntegerField(null=False)
     amount = models.PositiveIntegerField(null=False)
